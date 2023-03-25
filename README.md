@@ -1,1 +1,1 @@
-# Learn About CLIs By Using this CLI! 
+# Learn About CLIs (Command Line Interfaces)! 
