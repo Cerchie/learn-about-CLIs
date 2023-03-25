@@ -1,15 +1,15 @@
 {
-    "name": "cli-style",
-    "version": "0.0.0",
-    "description": "oclif example Hello World CLI",
+    "name": "learnclis",
+    "version": "1.0.0",
+    "description": "Learn how to run commands with a CLI by running this CLI.",
     "author": "Lucia Cerchie @Cerchie",
     "bin": {
-        "cli-style": "./bin/run"
+        "letsgo": "./bin/run"
     },
-    "homepage": "https://github.com/Cerchie/cli-style",
+    "homepage": "https://github.com/Cerchie/learn-about-CLIs",
     "license": "MIT",
     "main": "dist/index.js",
-    "repository": "Cerchie/cli-style",
+    "repository": "Cerchie/learn-about-CLIs",
     "files": [
         "/bin",
         "/dist",

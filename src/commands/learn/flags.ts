@@ -1,18 +1,24 @@
-import { Command } from '@oclif/core'
+import { Command, Flags } from '@oclif/core'
 import * as inquirer from 'inquirer'
 
 const prompt = inquirer.createPromptModule()
 
-export default class Commands extends Command {
-    static description = 'explains what a command is'
+export default class LearnFlags extends Command {
+    static description = 'explains what a flag is'
 
-    static examples = [`A command is...`]
+    static examples = [`A flag is...`]
+
+    static flags = {
+        name: Flags.string(),
+    }
 
     async run(): Promise<void> {
+        const { flags } = await this.parse(LearnFlags)
         this.log(
-            `A command executes some action, like sending JSON to an API, sending a password over a protocol, or registering a user selection. It can take in an argument, which is non-optional and positional, like 'commands' in 'learn commands'. Or it can take in an optional flag, like 'letsgo learn commands --help'.`
+            `A command line flag modifies a command's behavior or output. For example, 'learn flags --help' changes the command behavior to show the help text. Flags are optional. You can run 'learn flags --name=yourname to see an example of how a flag can change output.`
         )
-
+        if (flags.name)
+            console.log(`Hello ${flags.name}! Hope you're finding this useful.`)
         prompt([
             {
                 name: 'nextStep',

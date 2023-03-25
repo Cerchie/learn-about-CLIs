@@ -25,12 +25,30 @@ export default class Start extends Command {
                     { name: 'commands' },
                     { name: 'args' },
                     { name: 'flags' },
+                    { name: 'exit' },
                 ],
             },
         ]).then((answers) => {
             switch (answers.startingPoint) {
                 case 'commands': {
-                    this.log('A command executes some action.')
+                    this.log(
+                        'A command executes some action. Run this command to learn more: letsgo learn commands'
+                    )
+                    break
+                }
+                case 'args': {
+                    this.log(
+                        "An argument is a command's parameter. Run this command to learn more: letsgo learn args"
+                    )
+                    break
+                }
+                case 'flags': {
+                    this.log(
+                        'A flag modifies a command. Run this command to learn more: letsgo learn flags'
+                    )
+                    break
+                }
+                case 'exit': {
                 }
             }
         })

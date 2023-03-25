@@ -3,14 +3,14 @@ import * as inquirer from 'inquirer'
 
 const prompt = inquirer.createPromptModule()
 
-export default class Commands extends Command {
-    static description = 'explains what a command is'
+export default class Args extends Command {
+    static description = 'explains what an arg is'
 
-    static examples = [`A command is...`]
+    static examples = [`An arg is...`]
 
     async run(): Promise<void> {
         this.log(
-            `A command executes some action, like sending JSON to an API, sending a password over a protocol, or registering a user selection. It can take in an argument, which is non-optional and positional, like 'commands' in 'learn commands'. Or it can take in an optional flag, like 'letsgo learn commands --help'.`
+            `A command line argument directs a command line program to perform something specific, for example: 'letsgo learn args', where 'args' is the argument.`
         )
 
         prompt([
