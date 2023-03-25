@@ -4,12 +4,6 @@ import * as inquirer from 'inquirer'
 const prompt = inquirer.createPromptModule()
 
 export default class Start extends Command {
-    static flags = {
-        stage: Flags.string({
-            options: ['commands', 'args', 'flags'],
-        }),
-    }
-
     static description = 'start'
 
     static examples = [
@@ -19,7 +13,6 @@ export default class Start extends Command {
     static args = {}
 
     async run(): Promise<void> {
-        const { flags } = await this.parse(Start)
         this.log(
             'Welcome to this interactive tour of how CLIs work! Run --help to see all the commands.'
         )
@@ -34,6 +27,12 @@ export default class Start extends Command {
                     { name: 'flags' },
                 ],
             },
-        ])
+        ]).then((answers) => {
+            switch (answers.startingPoint) {
+                case 'commands': {
+                    this.log('A command executes some action.')
+                }
+            }
+        })
     }
 }
