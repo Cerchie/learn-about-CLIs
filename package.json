@@ -50,8 +50,8 @@
         ],
         "topicSeparator": " ",
         "topics": {
-            "hello": {
-                "description": "Say hello to the world and others"
+            "learn": {
+                "description": "learn about specific command components"
             }
         }
     },
