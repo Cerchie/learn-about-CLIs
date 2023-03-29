@@ -1,5 +1,6 @@
 import { Command, Flags, ux } from '@oclif/core'
 import * as inquirer from 'inquirer'
+import * as chalk from 'chalk'
 
 const prompt = inquirer.createPromptModule()
 
@@ -32,19 +33,25 @@ export default class Start extends Command {
             switch (answers.startingPoint) {
                 case 'commands': {
                     this.log(
-                        'A command executes some action. Run this command to learn more: letsgo learn commands'
+                        `A command executes some action. Run this command to learn more: ${chalk.green(
+                            'letsgo learn commands'
+                        )}`
                     )
                     break
                 }
                 case 'args': {
                     this.log(
-                        "An argument is a command's parameter. Run this command to learn more: letsgo learn args"
+                        `An argument is a command's parameter. Run this command to learn more: ${chalk.green(
+                            'letsgo learn args'
+                        )}`
                     )
                     break
                 }
                 case 'flags': {
                     this.log(
-                        'A flag modifies a command. Run this command to learn more: letsgo learn flags'
+                        `A flag modifies a command. Run this command to learn more: ${chalk.green(
+                            'letsgo learn flags'
+                        )}`
                     )
                     break
                 }

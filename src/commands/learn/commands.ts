@@ -1,5 +1,6 @@
 import { Command } from '@oclif/core'
 import * as inquirer from 'inquirer'
+import * as chalk from 'chalk'
 
 const prompt = inquirer.createPromptModule()
 
@@ -10,7 +11,17 @@ export default class Commands extends Command {
 
     async run(): Promise<void> {
         this.log(
-            `A command executes some action, like sending JSON to an API, sending a password over a protocol, or registering a user selection. It can take in an argument, which is non-optional and positional, like 'commands' in 'learn commands'. Or it can take in an optional flag, like 'letsgo learn commands --help'.`
+            `A command executes some action, like sending JSON to an API, sending a password over a protocol, or registering a user selection.`
+        )
+        this.log(
+            `It can take in an argument, which is non-optional and positional, like ${chalk.green(
+                'commands'
+            )} in  ${chalk.green('learn commands')}.`
+        )
+        this.log(
+            `Or it can take in an optional flag, like ${chalk.green(
+                'letsgo learn commands --help'
+            )}.`
         )
 
         prompt([
@@ -28,13 +39,17 @@ export default class Commands extends Command {
             switch (answers.nextStep) {
                 case 'args': {
                     this.log(
-                        `An argument is a command's parameter. Learn more by running: letsgo learn args`
+                        `An argument is a command's parameter. Learn more by running: ${chalk.green(
+                            'letsgo learn args'
+                        )}`
                     )
                     break
                 }
                 case 'flags': {
                     this.log(
-                        `A flag modifies a command. Learn more by running: letsgo learn flags`
+                        `A flag modifies a command. Learn more by running: ${chalk.green(
+                            'letsgo learn args'
+                        )}`
                     )
                     break
                 }
