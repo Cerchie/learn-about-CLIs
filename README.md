@@ -12,7 +12,7 @@ In Windows, you can use [Windows Terminal](https://learn.microsoft.com/en-us/win
 
 Once you know how to open your terminal, you can install npm by following the instructions on [this page](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-Then, copy and paste `npm i -g learnclis` into your terminal and hit 'enter'. That command will download and install this CLI (which is an interactive tour of CLI basics -- commands, args, and flags) for you!
+Then, copy and paste `npm i -g learnclis` into your terminal and hit 'enter'. That command will download and install this CLI (which is an interactive tour of CLI basics: commands, args, and flags) for you!
 
 From there, enter `letsgo start` and follow the prompts to learn more about the basic components of a CLI.
 
